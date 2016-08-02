@@ -31,4 +31,31 @@ angular.module('chat', ['ionic'])
       templateUrl: 'templates/tabs.html',
       controller: 'TabCtrl'
     })
+    .state('tabs.session',{
+      url:'/session',
+      views:{
+        'tab-content':{
+          templateUrl:'templates/tab-session.html',
+          controller:'SessionCtrl'
+        }
+      }
+    })
+    .state('tabs.contact',{
+      url:'/contact',
+      views:{
+        'tab-content':{
+          templateUrl:'templates/tab-contact.html',
+          controller:'ContactCtrl'
+        }
+      }
+    })
+    .state('tabs.apply',{
+      url:'/apply',
+      views:{
+        'tab-content':{
+          templateUrl:'templates/tab-apply.html',
+          controller:'ApplyCtrl'
+        }
+      }
+    })
 }]);
