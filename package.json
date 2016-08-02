@@ -1,6 +1,6 @@
 {
   "name": "chatex",
-  "version": "1.1.1",
+  "version": "1.0.0",
   "description": "chatEx: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
@@ -20,9 +20,11 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-rongcloud-im"
   ],
   "cordovaPlatforms": [
+    "android",
     "ios"
   ]
 }
