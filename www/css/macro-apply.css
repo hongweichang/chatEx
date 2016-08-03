@@ -1,0 +1,9 @@
+.apply-header{
+  height: 50px;
+}
+.apply-list a {
+  height: 44px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
