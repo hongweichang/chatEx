@@ -1,5 +1,5 @@
-angular.module('TabController', [])
+angular.module('ChatApp')
 
-.controller('TabCtrl', ['$scope', function ($scope) {
+.controller('tabCtrl', ['$scope', function ($scope) {
 
 }]);

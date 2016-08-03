@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('chat', ['ionic', 'TabController'])
+angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -23,39 +23,88 @@ angular.module('chat', ['ionic', 'TabController'])
     });
   })
 
-  .config(['', '', function ($stateProvider, $urlRouterProvider) {
+  .config(['$ocLazyLoadProvider', function ($ocLazyLoadProvider) {
+    $ocLazyLoadProvider.config({});
+  }])
+
+  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('tabs', {
         url: '/tabs',
         abstracts: true,
         templateUrl: 'templates/tabs.html',
-        controller: 'TabCtrl'
+        controller: 'tabCtrl',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'ChatApp',
+              files: [
+                'js/controller/tabController.js'
+              ]
+            });
+          }]
+        }
       })
+
       .state('tabs.session', {
         url: '/session',
         views: {
           'tab-session': {
             templateUrl: 'templates/tab-session.html',
-            controller: 'SessionCtrl'
+            controller: 'tabSessionCtrl'
           }
+        },
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'ChatApp',
+              files: [
+                'js/controller/tabSessionController.js'
+              ]
+            });
+          }]
         }
       })
+
       .state('tabs.contact', {
         url: '/contact',
         views: {
           'tab-contact': {
             templateUrl: 'templates/tab-contact.html',
-            controller: 'ContactCtrl'
+            controller: 'tabContactCtrl'
           }
+        },
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'ChatApp',
+              files: [
+                'js/controller/tabContactController.js'
+              ]
+            });
+          }]
         }
       })
+
       .state('tabs.apply', {
         url: '/apply',
         views: {
           'tab-apply': {
             templateUrl: 'templates/tab-apply.html',
-            controller: 'ApplyCtrl'
+            controller: 'tabApplyCtrl'
           }
+        },
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'ChatApp',
+              files: [
+                'js/controller/tabApplyController.js'
+              ]
+            });
+          }]
         }
-      })
+      });
+
+    $urlRouterProvider.otherwise('tabs/session');
   }]);
