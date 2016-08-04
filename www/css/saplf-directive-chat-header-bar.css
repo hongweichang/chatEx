@@ -1,0 +1,94 @@
+.bar.bar-header {
+  padding: 0;
+  background-color: #4f8ff7;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.tab-item.tab-item-active {
+  color: #4f8ff7;
+}
+
+.chat-header-bar {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.chat-header-bar .left {
+  width: 70px;
+  height: inherit;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+.chat-header-bar .left > div {
+  height: inherit;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.chat-header-bar .left .img img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.chat-header-bar .left .text {
+  opacity: 1;
+  transition: opacity .15s;
+}
+
+.chat-header-bar .left .text:active {
+  opacity: .3;
+}
+
+.chat-header-bar .center {
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: inherit;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-header-bar .right {
+  width: 70px;
+  height: inherit;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.chat-header-bar .right > div {
+  height: inherit;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.chat-header-bar .right .img {
+  font-size: 2em;
+  opacity: 1;
+  transition: opacity .15s;
+}
+
+.chat-header-bar .right .img:active {
+  opacity: .3;
+}
+
+.chat-header-bar .right .text {
+  opacity: 1;
+  transition: opacity .15s;
+}
+
+.chat-header-bar .right .text:active {
+  opacity: .3;
+}
