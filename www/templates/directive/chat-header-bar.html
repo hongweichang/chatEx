@@ -1,0 +1,23 @@
+<div class="chat-header-bar">
+  <div class="left" ng-click="left()">
+    <div class="img" ng-show="leftIsAvator">
+      <img ng-src="{{chatSrc}}" alt="">
+    </div>
+    <div class="text" ng-hide="leftIsAvator">
+      <i class="ion ion-ios-arrow-back"></i>&nbsp;
+      <span>{{chatLeft}}</span>
+    </div>
+  </div>
+  <div class="center">
+    <span>{{chatTitle}}</span>
+    <span style="font-size: .6em;">{{chatStatus}}</span>
+  </div>
+  <div class="right" ng-click="right()">
+    <div class="img" ng-show="rightIsIcon">
+      <i class="ion {{chatRightIcon}}"></i>
+    </div>
+    <div class="text" ng-hide="rightIsIcon">
+      {{chatRight}}
+    </div>
+  </div>
+</div>

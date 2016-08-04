@@ -23,8 +23,9 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
     });
   })
 
-  .config(['$ocLazyLoadProvider', function ($ocLazyLoadProvider) {
+  .config(['$ocLazyLoadProvider', '$ionicConfigProvider', function ($ocLazyLoadProvider, $ionicConfigProvider ) {
     $ocLazyLoadProvider.config({});
+    $ionicConfigProvider.platform.android.tabs.position('bottom');
   }])
 
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -39,7 +40,8 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
             return $ocLazyLoad.load({
               name: 'ChatApp',
               files: [
-                'js/controller/tabController.js'
+                'js/controller/tabController.js',
+                'js/directive/common.js'
               ]
             });
           }]
