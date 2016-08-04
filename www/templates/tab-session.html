@@ -7,10 +7,14 @@
 <ion-view>
   <ion-header-bar>
     <chat-header-bar chat-title="'消息'"
-                     chat-status="'在线'"
                      chat-src="'img/macro.png'"
-                     chat-right-icon="'ion-ios-camera-outline'"></chat-header-bar>
+                     chat-right-icon="'ion-ios-plus-empty'"></chat-header-bar>
   </ion-header-bar>
-  <ion-content>
+  <ion-content scroll="isScroll">
+    <ion-list>
+      <ion-item>
+        <chat-list-item chat-avator="'img/macro.png'"></chat-list-item>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

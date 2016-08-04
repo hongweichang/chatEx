@@ -1,9 +1,13 @@
-<div class="chat-header-bar">
+<div class="chat-header-bar"><!--
+author: saplf
+date: 2016/8/4
+description: a directive for header in the proejct
+ -->
   <div class="left" ng-click="left()">
     <div class="img" ng-show="leftIsAvator">
       <img ng-src="{{chatSrc}}" alt="">
     </div>
-    <div class="text" ng-hide="leftIsAvator">
+    <div class="text" ng-show="leftIsText">
       <i class="ion ion-ios-arrow-back"></i>&nbsp;
       <span>{{chatLeft}}</span>
     </div>
@@ -16,7 +20,7 @@
     <div class="img" ng-show="rightIsIcon">
       <i class="ion {{chatRightIcon}}"></i>
     </div>
-    <div class="text" ng-hide="rightIsIcon">
+    <div class="text" ng-show="rightIsText">
       {{chatRight}}
     </div>
   </div>
