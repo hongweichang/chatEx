@@ -2,14 +2,15 @@
 
 angular.module('ChatApp')
 
-.controller('tabSessionCtrl', ['$scope', function ($scope) {
-  $scope.isScroll = true;
-  $scope.$on('horStart', function () {
-    console.log('horStart');
-    $scope.isScroll = false;
-  });
-  $scope.$on('horEnd', function () {
-    console.log('horEnd');
-    $scope.isScroll = true;
-  })
+.controller('tabSessionCtrl', ['$scope', '$state', '$ionicViewSwitcher', function ($scope, $state, $ionicViewSwitcher) {
+  $scope.doRefresh = function () {
+    console.log('do refresh');
+  };
+  $scope.doPulling = function () {
+    console.log('do pulling')
+  };
+  $scope.toChat = function () {
+    $ionicViewSwitcher.nextDirection('forward');
+    $state.go('chat')
+  }
 }]);

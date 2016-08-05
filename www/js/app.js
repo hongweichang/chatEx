@@ -30,6 +30,22 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
 
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'loginCtrl',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'ChatApp',
+              files: [
+                'js/controller/loginController.js'
+              ]
+            });
+          }]
+        }
+      })
+
       .state('tabs', {
         url: '/tabs',
         abstracts: true,
@@ -106,7 +122,24 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
             });
           }]
         }
-      });
+      })
+
+      .state('chat', {
+        url: '/chat',
+        templateUrl: 'templates/chat.html',
+        controller: 'chatCtrl',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'ChatApp',
+              files: [
+                'js/controller/chatController.js'
+              ]
+            })
+          }]
+        }
+      })
+    ;
 
     $urlRouterProvider.otherwise('tabs/session');
   }]);
