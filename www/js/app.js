@@ -26,6 +26,7 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
   .config(['$ocLazyLoadProvider', '$ionicConfigProvider', function ($ocLazyLoadProvider, $ionicConfigProvider ) {
     $ocLazyLoadProvider.config({});
     $ionicConfigProvider.platform.android.tabs.position('bottom');
+    $ionicConfigProvider.platform.android.tabs.style('standard');
   }])
 
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -141,5 +142,5 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
       })
     ;
 
-    $urlRouterProvider.otherwise('tabs/session');
+    $urlRouterProvider.otherwise('login');
   }]);
