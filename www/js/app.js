@@ -26,10 +26,27 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
   .config(['$ocLazyLoadProvider', '$ionicConfigProvider', function ($ocLazyLoadProvider, $ionicConfigProvider ) {
     $ocLazyLoadProvider.config({});
     $ionicConfigProvider.platform.android.tabs.position('bottom');
+    $ionicConfigProvider.platform.android.tabs.style('standard');
   }])
 
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'loginCtrl',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'ChatApp',
+              files: [
+                'js/controller/loginController.js'
+              ]
+            });
+          }]
+        }
+      })
+
       .state('tabs', {
         url: '/tabs',
         abstracts: true,
@@ -106,7 +123,24 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
             });
           }]
         }
-      });
+      })
 
-    $urlRouterProvider.otherwise('tabs/session');
+      .state('chat', {
+        url: '/chat',
+        templateUrl: 'templates/chat.html',
+        controller: 'chatCtrl',
+        resolve: {
+          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'ChatApp',
+              files: [
+                'js/controller/chatController.js'
+              ]
+            })
+          }]
+        }
+      })
+    ;
+
+    $urlRouterProvider.otherwise('login');
   }]);

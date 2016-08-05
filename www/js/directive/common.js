@@ -24,6 +24,7 @@ angular.module('ChatApp')
     },
     controller: ['$scope', function ($scope) {
       $scope.leftIsText = !!$scope.chatRight;
+      $scope.chatBackArrow = $scope.leftIsText ? 'ion-ios-arrow-back' : '';
       $scope.leftIsAvator = !!$scope.chatSrc;
       $scope.rightIsText = !!$scope.chatLeft;
       $scope.rightIsIcon = !!$scope.chatRightIcon;
@@ -39,21 +40,13 @@ angular.module('ChatApp')
     replace: true,
     templateUrl: 'templates/directive/chat-list-item.html',
     scope: {
-      chatAvator: '=chatAvator'
+      chatAvator: '=chatAvator',
+      chatListTitle: '=chatListTitle',
+      chatTextRight: '=chatTextRight',
+      chatSpotView: '=chatSpotView'
     },
-    controller: ['$scope', '$ionicGesture', function ($scope, $ionicGesture) {
-      var ele = angular.element(document.querySelectorAll('.chat-list-item'));
-      $ionicGesture.on('dragstart', function () {
-        $scope.$emit('horStart');
-      }, ele);
-      $ionicGesture.on('dragleft', function (e) {
-        this.style.transform = ['translateX(-', e.gesture.distance, 'px)'].join('');
-      }, ele);
-      $ionicGesture.on('dragend', function () {
-        $scope.$emit('horEnd');
-        this.style.transform = 'translateX(0)';
-        this.style.transition = 'transform .3s';
-      }, ele)
+    controller: ['$scope', function ($scope) {
+
     }]
   }
 });
