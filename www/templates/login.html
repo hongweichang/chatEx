@@ -1,3 +1,6 @@
 <ion-view>
-  <div class="button" ng-click="login()">Login</div>
+  <ion-content scroll="false" style="display: flex;flex-flow: column nowrap; justify-content: center; align-items: center;">
+    <input type="text" placeholder="请输入用户名" style="border: 1px solid #8c8c8c;border-radius: 5px;" ng-model="username">
+    <button class="button" ng-click="login()">登录</button>
+  </ion-content>
 </ion-view>

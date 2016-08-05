@@ -12,5 +12,5 @@ angular.module('ChatApp')
   $scope.toChat = function () {
     $ionicViewSwitcher.nextDirection('forward');
     $state.go('chat')
-  }
+  };
 }]);

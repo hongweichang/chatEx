@@ -2,7 +2,6 @@
   padding: 0;
   background-color: #01aef7;
   color: #ffffff;
-  font-weight: bold;
 }
 
 .tab-item.tab-item-active {
@@ -84,7 +83,6 @@
 
 .chat-header-bar .right .text {
   opacity: 1;
-  transition: opacity .15s;
 }
 
 .chat-header-bar .right .text:active {

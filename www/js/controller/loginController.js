@@ -1,15 +1,34 @@
 angular.module('ChatApp')
 
-  .controller('loginCtrl', ['$scope', '$state', '$ionicViewSwitcher',
-    function ($scope, $state, $ionicViewSwitcher) {
+  .controller('loginCtrl', ['$scope', '$rootScope', '$state', '$ionicViewSwitcher', '$http',
+    function ($scope, $rootScope, $state, $ionicViewSwitcher, $http) {
+      $scope.username = '';
       $scope.login = function () {
-        RongCloudLibPlugin.init({appKey: 'e0x9wycfxx2yq'}, function (ret, err) {
-          if (ret.status === 'error') alert(JSON.stringify(err));
-        });
-        RongCloudLibPlugin.connect({token: 'nY6g3Q8Rvh7+z1z6vsTcWnP7WLtdyncb0ZtTrCoRHTmpcOGMlIHPZecxyffWKUKvqhvyn0UYXyVGcizffWphpA=='}, function (ret, err) {
-          alert(JSON.stringify(ret));
-        });
-        $ionicViewSwitcher.nextDirection('forward');
-        $state.go('tabs.session');
+        var username = $scope.username;
+        alert(username);
+        $http({
+          url: 'data/user.json',
+          method: 'POST'
+        })
+          .success(function (data) {
+            RongCloudLibPlugin.init({appKey: 'e0x9wycfxx2yq'}, function (ret, err) {
+              if (ret.status === 'error') {
+                alert(['Error Code: ', err.code].join(''));
+              }
+            });
+            RongCloudLibPlugin.connect({
+              token: data[username]
+            }, function (ret, err) {
+              if (ret.status === 'error') {
+                alert(['Error Code: ', err.code].join(''));
+                return;
+              }
+              $rootScope.user = {};
+              $rootScope.user.userId = ret.result.userId;
+              alert($rootScope.user.userId);
+              $ionicViewSwitcher.nextDirection('forward');
+              $state.go('tabs.session');
+            });
+          });
       }
     }]);
