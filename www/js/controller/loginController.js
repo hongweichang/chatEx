@@ -2,10 +2,11 @@ angular.module('ChatApp')
 
   .controller('loginCtrl', ['$scope', '$rootScope', '$state', '$ionicViewSwitcher', '$http',
     function ($scope, $rootScope, $state, $ionicViewSwitcher, $http) {
-      $scope.username = '';
+      $scope.user = {
+        username: ''
+      };
       $scope.login = function () {
-        var username = $scope.username;
-        alert(username);
+        var username = $scope.user.username;
         $http({
           url: 'data/user.json',
           method: 'POST'
@@ -25,7 +26,6 @@ angular.module('ChatApp')
               }
               $rootScope.user = {};
               $rootScope.user.userId = ret.result.userId;
-              alert($rootScope.user.userId);
               $ionicViewSwitcher.nextDirection('forward');
               $state.go('tabs.session');
             });
