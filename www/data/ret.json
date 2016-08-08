@@ -1,0 +1,8 @@
+{
+  "status":"success",
+  "result":
+  {
+    "useId":"1",
+    "connectionStatus": "CONNECTED"
+  }
+}

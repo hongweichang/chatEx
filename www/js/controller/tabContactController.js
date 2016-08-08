@@ -9,6 +9,7 @@ angular.module('ChatApp')
      switch(index){
        case 1:$scope.hide1=!$scope.hide1;break;
        case 2:$scope.hide2=!$scope.hide2;break;
+       default :break;
      }
     };
   }]);
