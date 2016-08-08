@@ -23,7 +23,7 @@ angular.module('ChatApp')
       chatRightCallback: '=chatRightCallback' // 右侧 触发函数
     },
     controller: ['$scope', function ($scope) {
-      $scope.leftIsText = !!$scope.chatRight;
+      $scope.leftIsText = !!$scope.chatLeft;
       $scope.chatBackArrow = $scope.leftIsText ? 'ion-ios-arrow-back' : '';
       $scope.leftIsAvator = !!$scope.chatSrc;
       $scope.rightIsText = !!$scope.chatLeft;
@@ -43,7 +43,8 @@ angular.module('ChatApp')
       chatAvator: '=chatAvator',
       chatListTitle: '=chatListTitle',
       chatTextRight: '=chatTextRight',
-      chatSpotView: '=chatSpotView'
+      chatSpotView: '=chatSpotView',
+      chatLeft: '=chatLeft'
     },
     controller: ['$scope', function ($scope) {
 
