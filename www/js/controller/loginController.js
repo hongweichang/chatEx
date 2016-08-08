@@ -4,7 +4,8 @@ angular.module('ChatApp')
     function ($scope, $rootScope, $state, $ionicViewSwitcher, $http) {
     $rootScope.arrMsgs = $rootScope.arrMsgs || [];
       $scope.user = {
-        username: ''
+        username: '',
+        password:''
       };
       $scope.login = function () {
         var username = $scope.user.username;

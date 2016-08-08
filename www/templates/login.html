@@ -1,6 +1,22 @@
 <ion-view>
-  <ion-content scroll="false" style="display: flex;flex-flow: column nowrap; justify-content: center; align-items: center;">
-    <input type="text" placeholder="请输入用户名" style="border: 1px solid #8c8c8c;border-radius: 5px;" ng-model="user.username">
-    <button class="button" ng-click="login()">登录</button>
+
+  <ion-content scroll="false">
+    <form name="myform" ng-submit="" novalidate>
+    <img class="starter-login-img" ng-src="img/App.jpg"/>
+    <div class="flex">
+      <div class="item-input starter-loginName-input">
+        <i class="ion-person"></i>&nbsp;&nbsp;
+        <input name="user" type="text" placeholder="userName" ng-model="user.username">
+      </div>
+      <div class="item-input starter-loginPassword-input">
+        <i class="ion-locked"></i>&nbsp;&nbsp;
+        <input type="password" placeholder="passWord" ng-model="user.password">
+      </div>
+      <div class="starter-login-submit">
+        <button class="button button-calm" ng-disabled="(!user.username||!user.password)" ng-click="login();" >登录</button>
+      </div>
+      </div>
+    </form>
   </ion-content>
+
 </ion-view>
