@@ -1,3 +1,13 @@
+ion-item.item {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.item-content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .chat-list-item {
   display: flex;
   flex-flow: row nowrap;
@@ -5,20 +15,24 @@
   align-items: center;
 }
 
+.chat-list-item .left-margin,
+.chat-list-item .right-margin {
+  width: 20px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
 .chat-list-item img {
-  flex-shrink: 0;
-  flex-grow: 0;
+  flex: 0 0 auto;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  transform: scale(1.4) translateX(4px);
+  transform: scale(1.4);
 }
 
 .chat-list-item .spotlight {
-  flex-shrink: 1;
-  flex-grow: 1;
-  margin-left: 30px;
-  width: 75vw;
+  flex: 1 1 auto;
+  margin-left: 20px;
 }
 
 .chat-list-item .spotlight .spot-title {
@@ -26,26 +40,41 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  transform: translateY(-4px);
 }
 
 .chat-list-item .spotlight .spot-title .spot-title-left {
   font-size: 1.2em;
-  transform: translateY(-4px);
 }
 
 .chat-list-item .spotlight .spot-title .spot-title-right {
   font-size: .7em;
   color: #7c7c7c;
-  transform: translateY(4px);
+  transform: translateY(10px);
 }
 
 .chat-list-item .spotlight .spot-content {
-  font-size: .9em;
+  font-size: .8em;
+  max-width: 60vw;
   color: #7c7c7c;
-  width: inherit;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.chat-list-item .message-count {
+  position: absolute;
+  float: right;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  right: 20px;
+  bottom: 10px;
+  font-size: .7em;
+  color: #ffffff;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  border-radius: 50%;
 }
 
 

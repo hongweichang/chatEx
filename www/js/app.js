@@ -142,5 +142,5 @@ angular.module('ChatApp', ['ionic', 'oc.lazyLoad'])
       })
     ;
 
-    $urlRouterProvider.otherwise('login');
+    $urlRouterProvider.otherwise('tabs/session');
   }]);

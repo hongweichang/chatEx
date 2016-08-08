@@ -1,9 +1,10 @@
-
-<div class="chat-list-item"><!--
+<div class="chat-list-item">
+  <!--
  author: saplf
  date: 2016/8/4
  description:
  -->
+  <div class="left-margin"></div>
   <img ng-src="{{chatAvator}}" alt="">
   <div class="spotlight">
     <div class="spot-title">
@@ -12,4 +13,6 @@
     </div>
     <div class="spot-content">{{chatSpotView}}</div>
   </div>
+  <div class="right-margin"></div>
+  <div class="message-count" ng-show="chatLeft">{{chatLeft}}</div>
 </div>
