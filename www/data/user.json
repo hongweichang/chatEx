@@ -1,5 +1,24 @@
 {
-  "saplf": "q8k36wLgqflojGIXf6xy3ojPa2+3b7xJRGsQ4r4PEC503LaR+I6D3yTL66mhJKyTxtGJpZRhJ4w=",
-  "Limo": "DBYVG/JecasffrV6HLcj2bgonXAR6WfQbewBAeJ7eqGX7K/FG3YL4E5r7tmf1tbsXn8iJBC6PbxWDBgt1uwp/w==",
-  "macro": "by42l4QMBpcwIQ05HlSNpzoD8iAOHoS67l8YwhjIUd8PHjrqUV0IE3sI8DTTsCsUECHjbhunCu6zpq+egTSjSg=="
+  "getToken": {
+    "saplf": "q8k36wLgqflojGIXf6xy3ojPa2+3b7xJRGsQ4r4PEC503LaR+I6D3yTL66mhJKyTxtGJpZRhJ4w=",
+    "Limo": "DBYVG/JecasffrV6HLcj2bgonXAR6WfQbewBAeJ7eqGX7K/FG3YL4E5r7tmf1tbsXn8iJBC6PbxWDBgt1uwp/w==",
+    "macro": "by42l4QMBpcwIQ05HlSNpzoD8iAOHoS67l8YwhjIUd8PHjrqUV0IE3sI8DTTsCsUECHjbhunCu6zpq+egTSjSg=="
+  },
+  "getUser": {
+    "1": {
+      "userId": 1,
+      "username": "saplf",
+      "userUrl": "img/macro.png"
+    },
+    "2": {
+      "userId": 2,
+      "username": "Limo",
+      "userUrl": "img/macro.png"
+    },
+    "3": {
+      "userId": 3,
+      "username": "macro",
+      "userUrl": "img/macro.png"
+    }
+  }
 }
